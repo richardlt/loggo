@@ -32,20 +32,20 @@ func SetLevel(level int) {
 	l.Level = level
 }
 
-func Debug(message string) {
+func Debug(message string, v ...interface{}) {
 	if l.Level <= DebugLevel {
-		log.Print("[" + TurquoiseColor + "DEBUG" + DarkColor + "] " + message)
+		log.Printf("["+TurquoiseColor+"DEBUG"+DarkColor+"] "+message, v...)
 	}
 }
 
-func Error(message string) {
+func Error(message string, v ...interface{}) {
 	if l.Level <= InfoLevel {
-		log.Print("[" + RedColor + "ERROR" + DarkColor + "] " + message)
+		log.Printf("["+RedColor+"ERROR"+DarkColor+"] "+message, v...)
 	}
 }
 
-func Info(message string) {
+func Info(message string, v ...interface{}) {
 	if l.Level <= InfoLevel {
-		log.Print("[" + GrayColor + "INFO" + DarkColor + "] " + message)
+		log.Printf("["+GrayColor+"INFO"+DarkColor+"] "+message, v...)
 	}
 }
